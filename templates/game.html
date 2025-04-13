@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Oyun Ekranı</title>
+    <style>
+        .kutu {
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #f9f9f9;
+        }
+        .tarla {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #d2b48c;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hoş geldin {{ kullanici_adi }} 👋</h1>
+
+    <div class="resources" style="display: flex; gap: 20px; margin-bottom: 20px;">
+        <div style="background-color: #f2f2f2; padding: 10px; border-radius: 10px;">
+            <h3>Para (💵)</h3>
+            <p>{{ kullanici_bilgileri['para'] }} TL</p>
+        </div>
+        <div style="background-color: #f2f2f2; padding: 10px; border-radius: 10px;">
+            <h3>Altın (🏆)</h3>
+            <p>{{ kullanici_bilgileri['altin'] }}</p>
+        </div>
+        <div style="background-color: #f2f2f2; padding: 10px; border-radius: 10px;">
+            <h3>Gen Puanı (🧬)</h3>
+            <p>{{ kullanici_bilgileri['gen_puani'] }}</p>
+        </div>
+    </div>
+
+    <div class="kutu">
+        <h2>Tarlalarım</h2>
+        {% for tarla in tarlalar %}
+            <div class="tarla">
+                Tarla Durumu:
+                {% if tarla == 1 %}
+                    Boş
+                {% elif tarla == 2 %}
+                    Ekili
+                {% elif tarla == 3 %}
+                    Büyüyor
+                {% elif tarla == 4 %}
+                    Hasat Edilebilir
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button>Yeni Tarla Satın Al</button>
+    </div>
+
+    <div class="kutu">
+        <h2>Envanter</h2>
+        <p>Henüz envanter sistemimiz yok.</p>
+    </div>
+
+    <div class="kutu">
+        <h2>Hasat Bilgilendirme</h2>
+        <p>Henüz ekim yapılmadı.</p>
+    </div>
+
+</body>
+</html>

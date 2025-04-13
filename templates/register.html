@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kayıt Ol</title>
+</head>
+<body>
+    <h1>Kayıt Ol</h1>
+    <form method="POST" action="/register">
+        <label>Kullanıcı Adı:</label><br>
+        <input type="text" name="kullanici_adi" required><br>
+        <label>E-Mail:</label><br>
+        <input type="email" name="email" required><br><br>
+        <label>Şifre:</label><br>
+        <input type="password" name="sifre" required><br><br>
+        <input type="submit" value="Kayıt Ol">
+    </form>
+    <p>Zaten hesabın var mı? <a href="/login">Giriş Yap</a></p>
+</body>
+</html>
